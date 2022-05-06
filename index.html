@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>data</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+    <script src="dropdown.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="seach-section">
+      <form name="soknavn" action="" target="" onsubmit="" method="GET">
+        <div class="row">
+          <div class="col-sm-4 col-lg-2">
+            <p>
+              <b>Navn:</b>
+            </p>
+          </div>
+          <div class="col-sm-4 col-lg-4">
+            <input type="text" size="31" name="navn" value="" autocomplete="false" id="name-input" />
+          </div>
+          <div class="col-sm-4 col-lg-6">
+            <p>
+              <button class="btn btn-primary" type="button" id="seach-btn">Søk</button>
+              <button class="btn btn-primary" type="RESET">Nullstill</button>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <p><b>Eventuell avgrensning:</b></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-lg-2"><p>&nbsp; - Organisasjonsform</p></div>
+          <div class="col-sm-8 col-lg-10">
+            <p>
+              <select style="width: 200px" name="orgform" id="orgform">
+                <option value="0">ALLE</option>
+                <option value="ADOS">Administrativ enhet - offentlig sektor</option>
+                <option value="AS">Aksjeselskap</option>
+                <option value="ASA">Allmennaksjeselskap</option>
+                <option value="BO">Andre bo</option>
+                <option value="PERS">Andre enkeltpersoner som registreres i tilknyttet register</option>
+                <option value="IKJP">Andre ikke-juridiske personer</option>
+                <option value="ANNA">Annen juridisk person</option>
+                <option value="SÆR">Annet foretak iflg. særskilt lov</option>
+                <option value="DA">Ansvarlig selskap med delt ansvar</option>
+                <option value="ANS">Ansvarlig selskap med solidarisk ansvar</option>
+                <option value="BBL">Boligbyggelag</option>
+                <option value="BRL">Borettslag</option>
+                <option value="ESEK">Eierseksjonssameie</option>
+                <option value="ENK">Enkeltpersonforetak</option>
+                <option value="SE">Europeisk selskap</option>
+                <option value="FLI">Forening/lag/innretning</option>
+                <option value="FKF">Fylkeskommunalt foretak</option>
+                <option value="FYLK">Fylkeskommune</option>
+                <option value="GFS">Gjensidig forsikringsselskap</option>
+                <option value="IKS">Interkommunalt selskap</option>
+                <option value="KS">Kommandittselskap</option>
+                <option value="KF">Kommunalt foretak</option>
+                <option value="KOMM">Kommune</option>
+                <option value="KBO">Konkursbo</option>
+                <option value="KTRF">Kontorfellesskap</option>
+                <option value="NUF">Norskregistrert utenlandsk foretak</option>
+                <option value="ORGL">Organisasjonsledd</option>
+                <option value="PRE">Partrederi</option>
+                <option value="PK">Pensjonskasse</option>
+                <option value="SA">Samvirkeforetak</option>
+                <option value="BA">Selskap med begrenset ansvar</option>
+                <option value="SPA">Sparebank</option>
+                <option value="STAT">Staten</option>
+                <option value="SF">Statsforetak</option>
+                <option value="STI">Stiftelse</option>
+                <option value="SAM">Tingsrettslig sameie</option>
+                <option value="VPFO">Verdipapirfond</option>
+              </select>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4 col-lg-2"><p>&nbsp; - Nærings Kode</p></div>
+          <div class="col-sm-4 col-lg-2">
+            <p><input type="text" / id="nærings-kode" placeholder="26.200" style="width: 200px" ></p>
+          </div>
+          <div class="col-sm-4 col-lg-4 offset-lg-1 offset-md-1">
+            <p>
+              Næringskoder finner du
+              <a href="https://www.ssb.no/klass/klassifikasjoner/6" target="_blank">Her</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4 col-lg-2"><p>&nbsp; - Fylke</p></div>
+          <div class="col-sm-8 col-lg-10">
+            <p>
+              <select style="width: 200px" id="fylkesnr" name="fylke">
+                <option value="0">ALLE</option>
+                <option value="3">Oslo</option>
+                <option value="11">Rogaland</option>
+                <option value="15">Møre og Romsdal</option>
+                <option value="18">Nordland</option>
+                <option value="21">Svalbard</option>
+                <option value="30">Viken</option>
+                <option value="34">Innlandet</option>
+                <option value="38">Vestfold og Telemark</option>
+                <option value="42">Agder</option>
+                <option value="46">Vestland</option>
+                <option value="50">Trøndelag</option>
+                <option value="54">Troms og Finnmark</option>
+              </select>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-lg-2"><p>&nbsp; - Kommune</p></div>
+          <div class="col-sm-8 col-lg-10">
+            <p>
+              <select style="width: 200px" name="kommune" id="kommunenr">
+                <option value="0">ALLE</option>
+              </select>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4 col-lg-2"><p>&nbsp; - fraAntallAnsatte</p></div>
+          <div class="col-sm-4 col-lg-4">
+            <input
+              type="number"
+              size="31"
+              name="fraAntallAnsatte"
+              value=""
+              autocomplete="false"
+              id="fraAntallAnsatte-input"
+              style="width: 200px"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4 col-lg-2"><p>&nbsp; - tilAntallAnsatte</p></div>
+          <div class="col-sm-4 col-lg-4">
+            <input
+              type="number"
+              size="31"
+              name="tilAntallAnsatte"
+              value=""
+              autocomplete="false"
+              id="tilAntallAnsatte-input"
+              style="width: 200px"
+            />
+          </div>
+        </div>
+      </form>
+      <hr />
+
+      <div id="navn" class="test"></div>
+    </section>
+  </body>
+</html>

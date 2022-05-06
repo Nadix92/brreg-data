@@ -1,0 +1,112 @@
+
+1) Søk enter ut i fra querry (man kan velge hva man vil ha ut i fra en drop down eller input)
+
+TODO:
+- Organisasjonsnummer
+- Hjemmeside
+- Forretningsadresse
+- Rolle
+- Konkurs
+- Under tvangsavvikling
+- Under avvikling
+- Stiftelsesdato
+- Siste innsendte årsregnskap
+
+ADDED:
+- Antall Ansatte
+- Næringskode
+- Organisasjonsform
+- Kommunenummer
+- Kommunenavn
+- Navn
+
+Næringskode: https://www.ssb.no/klass/klassifikasjoner/6
+
+2) Få en liste av alle enheter som man kan trykke på
+Features:
+- info hvor mange søk man får opp
+- add en søk resultat ut i fra listen
+- Sorting 
+
+
+3) Ny side med Informasion om enheten som du trykket på
+
+
+-------------------------------------
+
+Eksempel:
+
+https://w2.brreg.no/enhet/sok/detalj.jsp;jsessionid=5Y1L_fkUWThm05nwlBUxywk7VSBjZ7FQLXIxv1VagPj9SkTjQWUQ!-2140707467!1838239677?orgnr=995660806
+
+https://www.proff.no/selskap/innveno-as/surna/bedriftsr%C3%A5dgivning/IGGSGSM043Z/
+
+https://w2.brreg.no/enhet/sok/index.jsp
+
+
+-----------------------------------
+
+API:
+
+https://data.brreg.no/enhetsregisteret/api/docs/index.html
+
+
+-----------------------------------
+
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+
+
+
+
+
+
+
+         
+         
+         
+         
+         
+         
+         
