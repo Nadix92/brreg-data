@@ -512,15 +512,15 @@ if (seachBtn) {
           const rowHeading = document.createElement('div');
           rowHeading.innerHTML = `
           <div class="row">
-          <div class="liste col-sm-3">
-          <b>Orgnr.</b>
-          </div>
-          <div class="liste col-sm-5">
-          <b>Navn</b>
-          </div>
-          <div class="liste col-sm-3">
-          <b>Postnr./sted</b>
-          </div>
+            <div class="liste col-sm-3">
+              <b>Orgnr.</b>
+            </div>
+              <div class="liste col-sm-5">
+                <b>Navn</b>
+              </div>
+            <div class="liste col-sm-3">
+              <b>Postnr./sted</b>
+            </div>
           </div>
           `;
 
@@ -533,12 +533,13 @@ if (seachBtn) {
           data._embedded.enheter.forEach((ele, i) => {
             const divSøkRes = document.createElement('div');
             divSøkRes.innerHTML = `
-            <div class="row ${i % 2 == 0 ? 'søk-liste' : ''}" style="margin-bottom:10px;">
-            <div class="liste col-sm-3">${ele.organisasjonsnummer}&nbsp;</div>
+            <div class="row ${i % 2 == 0 ? 'søk-liste' : ''}" style="padding: 5px 0;">
+              <div class="liste col-sm-3">${ele.organisasjonsnummer}&nbsp;
+            </div>
             <div class="liste col-sm-5">
-            <a target="_blank" href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=${
-              ele.organisasjonsnummer
-            }">${ele.navn}</a>
+              <a target="_blank" href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=${
+                ele.organisasjonsnummer
+              }">${ele.navn}</a>
             </div>
             <div class="liste col-sm-3">${
               ele.forretningsadresse ? ele.forretningsadresse.postnummer : ele.postadresse.postnummer
