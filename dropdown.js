@@ -486,7 +486,7 @@ if (seachBtn) {
 
     let apiString = `https://data.brreg.no/enhetsregisteret/api/enheter?size=700${
       fylkesnr.value === '0' ? '' : knr
-    }${seachName}${næringsKodeValue}${orgFormVal}${tilAAVal}${fraAAVal}`;
+    }${seachName}${næringsKodeValue}${orgFormVal}${tilAAVal}${fraAAVal}&sort=antallAnsatte,DESC`;
 
     console.log(apiString);
 
@@ -514,15 +514,18 @@ if (seachBtn) {
           const rowHeading = document.createElement('div');
           rowHeading.innerHTML = `
           <div class="row">
-            <div class="liste col-sm-3">
+            <div class="liste col-sm-2">
               <b>Orgnr.</b>
             </div>
-              <div class="liste col-sm-5">
+              <div class="liste col-sm-4">
                 <b>Navn</b>
               </div>
-            <div class="liste col-sm-3">
+            <div class="liste col-sm-2">
               <b>Postnr./sted</b>
             </div>
+            <div class="liste col-sm-2 text-center">
+            <b>Antall Ansatte</b>
+          </div>
           </div>
           `;
 
@@ -536,18 +539,21 @@ if (seachBtn) {
             const divSøkRes = document.createElement('div');
             divSøkRes.innerHTML = `
             <div class="row ${i % 2 == 0 ? 'søk-liste' : ''}" style="padding: 5px 0;">
-              <div class="liste col-sm-3">${ele.organisasjonsnummer}&nbsp;
-            </div>
-            <div class="liste col-sm-5">
-              <a target="_blank" href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=${
-                ele.organisasjonsnummer
-              }">${ele.navn}</a>
-            </div>
-            <div class="liste col-sm-3">${
-              ele.forretningsadresse ? ele.forretningsadresse.postnummer : ele.postadresse.postnummer
-            }
-            ${ele.forretningsadresse ? ele.forretningsadresse.poststed : ele.postadresse.poststed}</div>
-            </div>
+              <div class="liste col-sm-2">${ele.organisasjonsnummer}&nbsp;
+              </div>
+              <div class="liste col-sm-4">
+                <a target="_blank" href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=${
+                  ele.organisasjonsnummer
+                }">${ele.navn}</a>
+              </div> 
+              <div class="liste col-sm-2">${
+                ele.forretningsadresse ? ele.forretningsadresse.postnummer : ele.postadresse.postnummer
+              }
+                ${ele.forretningsadresse ? ele.forretningsadresse.poststed : ele.postadresse.poststed}
+                </div>
+                <div class="liste col-sm-2 text-center">${ele.antallAnsatte}
+              </div> 
+            </div> 
             `;
             navn.appendChild(divSøkRes);
           });
