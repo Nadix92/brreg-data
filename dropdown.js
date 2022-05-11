@@ -438,6 +438,8 @@ const nameInput = document.getElementById('name-input');
 const næringsKode = document.getElementById('nærings-kode');
 const organisasjonsform = document.getElementById('orgform');
 
+const navn = document.getElementById('navn');
+
 const tilAntallAnsatte = document.getElementById('tilAntallAnsatte-input');
 const fraAntallAnsatte = document.getElementById('fraAntallAnsatte-input');
 

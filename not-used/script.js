@@ -4,7 +4,6 @@ const komuneNr = document.getElementById('komuneNr');
 const fraAntallAnsatte2 = document.getElementById('fraAntallAnsatte2');
 const tilAntallAnsatte2 = document.getElementById('tilAntallAnsatte2');
 
-const navn = document.getElementById('navn');
 const organisasjonsnummer = document.getElementById('organisasjonsnummer');
 const antallAnsatte = document.getElementById('antallAnsatte');
 
