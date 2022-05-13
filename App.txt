@@ -53,11 +53,26 @@ https://data.brreg.no/enhetsregisteret/api/docs/index.html
 -----------------------------------
 
 
-         
-         
-         
-         
-         
+SORING:
+API: &sort=antallAnsatte,{ASC/DESC}
+
+1) add event listiner på row rowHeading alle 4
+
+2) lag en toggle for asc/DESC med icon
+  - start med ingen icon
+  - trykk en gang for icon nedover(asc sorting)
+  - toggle for Desc sorting
+
+3) script som sorter fra even listner      
+
+
+Icons:         
+<ion-icon name="caret-up-outline"></ion-icon>
+<ion-icon name="caret-down-outline"></ion-icon>
+
+<ion-icon name="chevron-down-outline"></ion-icon>
+<ion-icon name="chevron-up-outline"></ion-icon>
+
          
          
          

@@ -5,3 +5,14 @@
 .søk-liste {
   background-color: #e7effb;
 }
+
+.liste-heading {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.active-asc {
+}
+
+.active-desc {
+}

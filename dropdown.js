@@ -443,6 +443,8 @@ const navn = document.getElementById('navn');
 const tilAntallAnsatte = document.getElementById('tilAntallAnsatte-input');
 const fraAntallAnsatte = document.getElementById('fraAntallAnsatte-input');
 
+const postnummer = document.getElementById('postnummer-input');
+
 if (seachBtn) {
   seachBtn.addEventListener('click', async () => {
     let selectElement = document.querySelectorAll('[name=kommune]');
@@ -454,11 +456,18 @@ if (seachBtn) {
     let seachName = nameInput.value;
     let orgFormVal = organisasjonsform.options[organisasjonsform.selectedIndex].value;
 
-    let tilAAVal = tilAntallAnsatte.value;
-    if (tilAAVal !== '') tilAAVal = `&tilAntallAnsatte=${tilAAVal}`;
+    let postnummerVal = postnummer.value;
+    if (postnummerVal !== '') {
+      postnummerVal = `&forretningsadresse.postnummer=${postnummerVal}`;
+    }
+
+    console.log('postnummerVal: ' + postnummerVal);
 
     let fraAAVal = fraAntallAnsatte.value;
     if (fraAAVal !== '') fraAAVal = `&fraAntallAnsatte=${fraAAVal}`;
+
+    let tilAAVal = tilAntallAnsatte.value;
+    if (tilAAVal !== '') tilAAVal = `&tilAntallAnsatte=${tilAAVal}`;
 
     if (orgFormVal === '0') {
       orgFormVal = '';
@@ -481,12 +490,13 @@ if (seachBtn) {
       knr = `&kommunenummer=${knr}`;
     }
 
+    // Makes string for fylkesnr
+    const fylkesnrStr = fylkesnr.value === '0' ? '' : knr;
+
     // if (fnr) fnr = `&postadresse.kommunenummer=${fnr}`;
     if (seachName) seachName = `&navn=${seachName}`;
 
-    let apiString = `https://data.brreg.no/enhetsregisteret/api/enheter?size=700${
-      fylkesnr.value === '0' ? '' : knr
-    }${seachName}${næringsKodeValue}${orgFormVal}${tilAAVal}${fraAAVal}&sort=antallAnsatte,DESC`;
+    let apiString = `https://data.brreg.no/enhetsregisteret/api/enheter?size=700${fylkesnrStr}${seachName}${næringsKodeValue}${orgFormVal}${tilAAVal}${fraAAVal}${postnummerVal}`;
 
     console.log(apiString);
 
@@ -511,19 +521,22 @@ if (seachBtn) {
             antalSøkEle.innerHTML = `Antal søk: ${data._embedded.enheter.length}`;
           }
 
+          // const arrowUp = `<ion-icon name="caret-up-outline"></ion-icon>`;
+          // const arrowDown = `<ion-icon name="caret-down-outline"></ion-icon>`;
+
           const rowHeading = document.createElement('div');
           rowHeading.innerHTML = `
           <div class="row">
-            <div class="liste col-sm-2">
-              <b>Orgnr.</b>
+            <div class="liste-heading col-sm-2">
+              <b>Orgnr.</ion-icon></b>
             </div>
-              <div class="liste col-sm-4">
+              <div class="liste-heading col-sm-4">
                 <b>Navn</b>
               </div>
-            <div class="liste col-sm-2">
+            <div class="liste-heading col-sm-2">
               <b>Postnr./sted</b>
             </div>
-            <div class="liste col-sm-2 text-center">
+            <div class="liste-heading col-sm-2 text-center">
             <b>Antall Ansatte</b>
           </div>
           </div>
@@ -534,6 +547,14 @@ if (seachBtn) {
 
           // Overskrift row
           navn.appendChild(rowHeading);
+
+          // console.log(document.querySelector('.test1'));
+
+          const array = data._embedded.enheter;
+
+          // array.forEach(ele => ele.antallAnsatte.sort((a, b) => a - b));
+
+          console.log(array);
 
           data._embedded.enheter.forEach((ele, i) => {
             const divSøkRes = document.createElement('div');
