@@ -24,8 +24,9 @@
     <script defer type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script defer nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <script src="dropdown.js" defer></script>
-    <script src="sort.js" defer></script>
+    <script type="module" src="js/script.js" defer></script>
+    <!-- <script src="dropdown.js" defer></script>
+    <script src="sort.js" defer></script> -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -106,8 +107,7 @@
           <div class="col-sm-4 col-lg-2"><p>&nbsp; - Nærings Kode</p></div>
           <div class="col">
             <p>
-              <input type="text" / id="nærings-kode" placeholder="26.200" style="width: 200px" > Næringskoder
-              finner du
+              <input type="text" / id="nærings-kode" style="width: 200px" > Næringskoder finner du
               <a href="https://www.ssb.no/klass/klassifikasjoner/6" target="_blank">Her</a>
             </p>
           </div>
@@ -198,21 +198,40 @@
         </div>
       </form>
       <hr />
-
-      <!-- <div class="row">
-        <div class="liste-heading col-sm-2">
-          <b>Orgnr.</ion-icon></b>
+      <div class="row hide" id="søk-treff-info">
+        <div class="col-sm-2"><p id="antalSøkEle" class=""></p></div>
+        <div class="col">
+          <input
+            type="text"
+            size="31"
+            value=""
+            autocomplete="false"
+            class="hide seach-treff"
+            id="seach-treff-input"
+            style="width: 300px"
+            placeholder="Søk etter navn fra treff"
+          />
         </div>
-          <div class="liste-heading col-sm-4">
-            <b>Navn </b>
-          </div>
-        <div class="liste-heading col-sm-2">
-          <b>Postnr./sted</b>
-        </div>
-        <div class="liste-heading col-sm-2 text-center">
-        <b>Antall Ansatte</b>
       </div>
-      </div> -->
+
+      <div class="row hide seach_heading">
+        <div class="liste-heading col-sm-2 align-middle" id="org-nr-sort">
+          <b class="text">Orgnr.</b>
+          <ion-icon name="swap-vertical-sharp"></ion-icon>
+        </div>
+        <div class="liste-heading col-sm-4" id="navn-sort">
+          <b>Navn </b>
+          <ion-icon name="swap-vertical-sharp"></ion-icon>
+        </div>
+        <div class="liste-heading col-sm-2" id="post-nr">
+          <b>Postnr./sted</b>
+          <ion-icon name="swap-vertical-sharp"></ion-icon>
+        </div>
+        <div class="liste-heading col-sm-2 text-center" id="antall-ansatte">
+          <b>Antall Ansatte</b>
+          <ion-icon name="swap-vertical-sharp"></ion-icon>
+        </div>
+      </div>
 
       <div id="navn" class="test"></div>
     </section>

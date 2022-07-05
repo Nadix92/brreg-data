@@ -52,30 +52,29 @@ https://data.brreg.no/enhetsregisteret/api/docs/index.html
 
 -----------------------------------
 
+https://nadix92.github.io/brreg-data/
 
-SORING:
-API: &sort=antallAnsatte,{ASC/DESC}
+-----------------------------------
 
-1) add event listiner på row rowHeading alle 4
+https://www.ssb.no/api/pxwebapi
 
-2) lag en toggle for asc/DESC med icon
-  - start med ingen icon
-  - trykk en gang for icon nedover(asc sorting)
-  - toggle for Desc sorting
+https://innsikt.proff.no/produkter-og-tjenester/proff-api/
 
-3) script som sorter fra even listner      
+https://www.api1881.no/
+
+https://www.purehelp.no/m/
+
+-----------------------------------
+
+API for regnskap:
+
+https://data.brreg.no/regnskapsregisteret/regnskap/995660806 (orgnr)
+
+API DOC:
+https://data.brreg.no/regnskapsregisteret/regnskap/swagger-ui/swagger-ui/index.html
 
 
-Icons:         
-<ion-icon name="caret-up-outline"></ion-icon>
-<ion-icon name="caret-down-outline"></ion-icon>
-
-<ion-icon name="chevron-down-outline"></ion-icon>
-<ion-icon name="chevron-up-outline"></ion-icon>
-
-         
-         
-         
+  
          
          
          
